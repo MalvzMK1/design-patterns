@@ -17,24 +17,24 @@ Each pattern will be implemented in isolation, accompanied by explanations and p
 ## 📚 Repository Structure
 
 ```
-📂 src/
+📂 /
  ├── behavioral/
  │    ├── strategy/
- │    │    ├── StrategyExample.java
+ │    │    ├── strategy_example.py
  │    │    └── README.md
  │    └── observer/
- │         ├── ObserverExample.java
+ │         ├── observer_example.py
  │         └── README.md
  ├── creational/
  │    ├── singleton/
- │    │    ├── SingletonExample.java
+ │    │    ├── singleton_example.py
  │    │    └── README.md
  │    └── factory/
- │         ├── FactoryExample.java
+ │         ├── factory_example.py
  │         └── README.md
  ├── structural/
  │    ├── adapter/
- │    │    ├── AdapterExample.java
+ │    │    ├── adapter_example.py
  │    │    └── README.md
 ```
 

@@ -40,7 +40,7 @@ Each pattern will be implemented in isolation, accompanied by explanations and p
 
 ## 🧩 Patterns to be Covered
 
-- **Creational**: Singleton, Factory Method, Abstract Factory, Builder, Prototype
+- [**Creational**](./creational/README.md): Singleton, Factory Method, Abstract Factory, Builder, Prototype
 - **Structural**: Adapter, Decorator, Facade, Composite, Proxy, Flyweight, Bridge
 - **Behavioral**: Strategy, Observer, Command, State, Template Method, Chain of Responsibility, Mediator, Memento, Visitor, Interpreter, Iterator
 

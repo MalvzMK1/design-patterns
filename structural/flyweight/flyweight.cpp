@@ -103,6 +103,10 @@ public:
     cache_.push_back(std::make_shared<Particle>(color, brightness, texture));
     return cache_.back();
   }
+
+  static size_t getCacheSize() {
+    return cache_.size();
+  }
 };
 
 class Game {
@@ -142,24 +146,28 @@ public:
   }
 };
 
-// definição do cache estático
 std::vector<std::shared_ptr<Particle>> ParticleFactory::cache_;
 
 int main() {
-    Game game;
+  srand(time(nullptr));
+  Game game;
 
-    // Criando várias partículas com os mesmos dados intrínsecos
-    game.addParticle(255, 100, "sparkle.png", 10, 20, 5, 1);
-    game.addParticle(255, 100, "sparkle.png", 15, 25, 6, 2);
-    game.addParticle(255, 100, "sparkle.png", 20, 30, 7, 3);
+  for (int i = 0; i < 1000; i++) {
+    if (i % 2 == 0) {
+      game.addParticle(255, 100, "sparkle.png",
+        rand() % 100, rand() % 100, rand() % 10 + 1, rand() % 8);
+    } else {
+      game.addParticle(0, 200, "smoke.png",
+        rand() % 100, rand() % 100, rand() % 10 + 1, rand() % 8);
+    }
+  }
 
-    // Criando partículas diferentes
-    game.addParticle(0, 200, "smoke.png", 30, 40, 3, 4);
-    game.addParticle(0, 200, "smoke.png", 35, 45, 4, 5);
-
-    // Desenhando todas as partículas
+  std::cout << "\n--- Drawing first 10 particles ---\n";
+  for (int i = 0; i < 10; i++) {
     game.draw();
+  }
 
-    return 0;
+  std::cout << "\nFlyweights criados em cache: "
+            << ParticleFactory::getCacheSize() << "\n";
 }
 
